@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8"/>
+<title>(lambda (x) (+ x 高校必修情報I))</title>
+<meta name="author" content="菅野 剛"/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="reveal.js-master/css/reveal.css"/>
+
+<link rel="stylesheet" href="reveal.js-master/css/theme/night.css" id="theme"/>
+
+<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+<script>
+    if( window.location.search.match( /print-pdf/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = 'reveal.js-master/css/print/pdf.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+    }
+</script>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide">
+<h1 class="title">(lambda (x) (+ x 高校必修情報I))</h1><h2 class="author">菅野 剛</h2><p class="date">Created: 2019-09-29 Sun 09:44</p>
+</section>
+
+<section>
+<section id="slide-1">
+<h2 id="1"><span class="section-number-2">1</span> 変わる社会</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+</section>
+<section id="slide-1-1">
+<h3 id="1-1"><span class="section-number-3">1.1</span> 産業革命<sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup></h3>
+<div class="outline-text-3" id="text-1-1">
+</div>
+<ol class="org-ol">
+<li><a id="1-1-1"></a>第1次産業革命<br>
+<p>
+18C末〜 水力や蒸気機関による工場の <b>機械化</b>
+</p>
+</li>
+
+<li><a id="1-1-2"></a>第2次産業革命<br>
+<p>
+20C初頭 分業に基づく <b>電力</b> を用いた大量生産
+</p>
+</li>
+
+<li><a id="1-1-3"></a>第3次産業革命<br>
+<p>
+1970年代初頭〜 電子工学や <b>情報技術</b> を用いたオートメーション化
+</p>
+</li>
+
+<li><a id="1-1-4"></a>第4次産業革命<br>
+<ol>
+<li>IoT及びビッグデータ、2. AI</li>
+
+</ol>
+</li>
+</ol>
+
+</section>
+<section id="slide-1-2">
+<h3 id="1-2"><span class="section-number-3">1.2</span> 第4次産業革命、格差、雇用</h3>
+<ul>
+<li><a href="https://www6.nhk.or.jp/special/detail/index.html?aid=20181007">NHKスペシャル マネー・ワールド 資本主義の未来 第2集 仕事がなくなる!?</a></li>
+
+</ul>
+
+
+<figure id="org71995c8">
+<img src="file:///Users/sugano/GoogleDrive/images/NHK-money-world-2-640x360.png" alt="NHK-money-world-2-640x360.png" width="480">
+
+<figcaption><span class="figure-number">&#22259;1:  </span>NHKスペシャル マネー・ワールド</figcaption>
+</figure>
+
+
+</section>
+</section>
+<section>
+<section id="slide-2">
+<h2 id="2"><span class="section-number-2">2</span> 変わる教育</h2>
+<div class="outline-text-2" id="text-2">
+</div>
+</section>
+<section id="slide-2-1">
+<h3 id="2-1"><span class="section-number-3">2.1</span> 変わる教育</h3>
+<div class="outline-text-3" id="text-2-1">
+</div>
+<ol class="org-ol">
+<li><a id="2-1-1"></a>小学校<br>
+<ul>
+<li>2020年にプログラミングが必修化</li>
+<li>Scratch</li>
+
+</ul>
+</li>
+
+<li><a id="2-1-2"></a>高等学校<br>
+<ul>
+<li>2022年に統計学、プログラミング</li>
+<li>必修科目 情報I
+<ul>
+<li>ビッグデータ、Webスクレイピング、テキストマイニング</li>
+<li>R、Python</li>
+
+</ul></li>
+
+</ul>
+</li>
+</ol>
+
+</section>
+<section id="slide-2-2">
+<h3 id="2-2"><span class="section-number-3">2.2</span> 統合イノベーション戦略推進会議</h3>
+<ul>
+<li><a href="https://www8.cao.go.jp/cstp/tyousakai/humanai/6kai/siryo1-2.pdf">AI戦略（案） 全体俯瞰図 (PDF)</a></li>
+
+</ul>
+
+<figure id="orgaff7b3a">
+<img src="file:///Users/sugano/GoogleDrive/images/2018-09-28-AI-siryo1-2-800x600.png" alt="2018-09-28-AI-siryo1-2-800x600.png" width="480">
+
+<figcaption><span class="figure-number">&#22259;2:  </span>2018.9.28 統合イノベーション戦略推進会議資料 AI戦略(案) 全体俯瞰図</figcaption>
+</figure>
+
+
+</section>
+<section id="slide-2-3">
+<h3 id="2-3"><span class="section-number-3">2.3</span> AI戦略パッケージ</h3>
+<ul>
+<li><a href="https://www8.cao.go.jp/cstp/tyousakai/humanai/6kai/siryo1-2.pdf">AI戦略（案） 全体俯瞰図 (PDF)</a></li>
+
+</ul>
+<ol class="org-ol">
+<li><a id="2-3-1"></a>教育改革 (一部抜粋)<br>
+<ul>
+<li><b>文理を問わず普通高校、専門高校、高等専門学校等のAI・数理・データサイエンス教育の抜本的充実</b> 、
+&#x2026;
+高等学校教育全般における <a href="https://ja.wikipedia.org/wiki/STEAM%E6%95%99%E8%82%B2">STEAM教育</a> の充実による <b>文理分断からの脱却</b></li>
+<li><b>大学入試改革(大学全学部に数学、情報I科目)</b></li>
+<li>AI・数理・データサイエンス教育を <b>3年以内に大学全学部学生に必修化</b> &#x2026;</li>
+<li>&#x2026;</li>
+
+</ul>
+</li>
+</ol>
+
+
+</section>
+</section>
+<section>
+<section id="slide-3">
+<h2 id="3"><span class="section-number-2">3</span> 社会の可視化</h2>
+<div class="outline-text-2" id="text-3">
+</div>
+</section>
+<section id="slide-3-1">
+<h3 id="3-1"><span class="section-number-3">3.1</span> 教育と社会的分業</h3>
+<div class="outline-text-3" id="text-3-1">
+</div>
+<ol class="org-ol">
+<li><a id="3-1-1"></a>学校基本調査2018 の結果を可視化<br>
+<ol>
+<li><a href="https://www.e-stat.go.jp/">政府統計の総合窓口 (e-Stat)</a> へアクセス</li>
+<li>「 <a href="https://www.e-stat.go.jp/stat-search?page=1&amp;query=%E5%AD%A6%E6%A0%A1%E5%9F%BA%E6%9C%AC%E8%AA%BF%E6%9F%BB%202018">学校基本調査 2018</a> 」 を検索</li>
+<li>卒業後の就職状況</li>
+<li>Excel ファイルをダウンロード</li>
+<li>必要な情報を抽出</li>
+<li>R へデータ読み込み</li>
+<li>R でグラフ作成</li>
+
+</ol>
+</li>
+</ol>
+
+
+</section>
+<section id="slide-3-2">
+<h3 id="3-2"><span class="section-number-3">3.2</span> 卒業後の就職＝社会的分業</h3>
+
+<figure id="orge868bf1">
+<img src="figures/HE4IR-R-mosaicplot-02.png" alt="HE4IR-R-mosaicplot-02.png" width="480">
+
+<figcaption><span class="figure-number">&#22259;3:  </span>社会的分業マップ</figcaption>
+</figure>
+
+
+
+
+
+</section>
+<section id="slide-3-3">
+<h3 id="3-3"><span class="section-number-3">3.3</span> 社会的分業マップ</h3>
+<div class="outline-text-3" id="text-3-3">
+</div>
+<ol class="org-ol">
+<li><a id="3-3-1"></a>理工・教育・保健 ≒ 専門技術職<br>
+<ol>
+<li>専門技術を磨き、社会を下支え</li>
+<li>専門技術で進展する <b>IT化</b></li>
+
+</ol>
+</li>
+
+<li><a id="3-3-2"></a>人文社会系 ≒ 事務・販売職<br>
+<ol>
+<li>社会の神経回路網として下支え</li>
+<li>コミュニケーションで進展する <b>IT化</b></li>
+<li>情報化社会に求められる人文社会系とは</li>
+
+</ol>
+</li>
+</ol>
+
+</section>
+<section id="slide-3-4">
+<h3 id="3-4"><span class="section-number-3">3.4</span> 文理学部</h3>
+<div class="outline-text-3" id="text-3-4">
+</div>
+<ol class="org-ol">
+<li><a id="3-4-1"></a>人文社会系の強み<br>
+<ul>
+<li>ソフトな感性</li>
+
+</ul>
+</li>
+
+<li><a id="3-4-2"></a>理工系の強み<br>
+<ul>
+<li>ハードなスキル</li>
+
+</ul>
+</li>
+
+<li><a id="3-4-3"></a>18学科が集う文理融合の強み<br>
+<ul>
+<li><a href="https://ja.wikipedia.org/wiki/STEAM%E6%95%99%E8%82%B2">STEAM教育</a>
+<ul>
+<li>科学, 技術, 工学, 芸術, 数学</li>
+
+</ul></li>
+<li>第4次産業革命の到来・激変の社会
+<ul>
+<li>世界標準への授業対応 (R 2007年〜, Python 2018年〜)</li>
+
+</ul></li>
+<li>枠にとらわれず、多様に柔軟に学び続ける場</li>
+
+</ul>
+</li>
+</ol>
+
+
+</section>
+</section>
+<section>
+<section id="slide-4">
+<h2 id="4"><span class="section-number-2">4</span> Appendix</h2>
+<div class="outline-text-2" id="text-4">
+</div>
+</section>
+<section id="slide-4-1">
+<h3 id="4-1"><span class="section-number-3">4.1</span> 無償のオンライン講座 MOOC</h3>
+<ul>
+<li><a href="https://lms.gacco.org/courses/course-v1:gacco+pt010+2019_07/about">高校生のためのデータサイエンス入門 gacco</a></li>
+<li><a href="https://lms.gacco.org/courses/course-v1:gacco+pt028+2019_08/about">はじめてのAI gacco</a></li>
+<li><a href="https://lms.gacco.org/courses/course-v1:gacco+ga109+2019_10/about">大学生のためのデータサイエンス（I） gacco</a></li>
+<li><a href="https://lms.gacco.org/courses/course-v1:gacco+pt025+2019_06/about">大学生のためのデータサイエンス（II）gacco</a></li>
+<li><a href="https://lms.gacco.org/courses/course-v1:gacco+ga031+2019_10/about">社会人のためのデータサイエンス入門 gacco</a>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=hp9kffpc5mg">「社会人のためのデータサイエンス入門」ダイジェスト講義 - YouTube</a></li>
+
+</ul></li>
+
+</ul>
+
+</section>
+<section id="slide-4-2">
+<h3 id="4-2"><span class="section-number-3">4.2</span> Lisper</h3>
+<ol>
+<li><p>
+1+1 を <a href="https://ja.wikipedia.org/wiki/LISP">LISP</a> の (関数 引数1 引数2) で表すと
+</p>
+<div class="org-src-container">
+
+<pre  class="src src-emacs-lisp">  (+ 1 1)
+</pre>
+</div>
+
+<pre class="example">
+2
+</pre></li>
+
+</ol>
+
+
+<ol>
+<li><p>
+リスト '(10 20 30) の要素それぞれに1を足すと
+</p>
+<div class="org-src-container">
+
+<pre  class="src src-emacs-lisp">  (mapcar (<span style="color: #00ffff;">lambda</span> (x) (+ x 1))
+          '(10 20 30))
+</pre>
+</div>
+
+<pre class="example">
+(11 21 31)
+</pre></li>
+
+<li><p>
+今後の社会を <a href="https://ja.wikipedia.org/wiki/LISP">LISP</a> の比喩でポエムにすると
+</p>
+<div class="org-src-container">
+
+<pre  class="src src-emacs-lisp">  (mapcar (<span style="color: #00ffff;">lambda</span> (x) (+ x &#39640;&#26657;&#24517;&#20462;&#24773;&#22577;I))
+          '(&#945;&#31038;&#20250;&#23398; &#946;&#31038;&#20250;&#23398; &#947;&#31038;&#20250;&#23398; ... ))
+</pre>
+</div>
+
+<pre class="example">
+(α社会学2.0 β社会学2.0 γ社会学2.0 ... )
+</pre></li>
+
+</ol>
+
+</section>
+<section id="slide-4-3">
+<h3 id="4-3"><span class="section-number-3">4.3</span> R User (1/8)</h3>
+<ul>
+<li><a href="https://rstudio.cloud/">RStudio Cloud</a> で、Get Started をクリック</li>
+
+</ul>
+
+
+<figure id="org8d62119">
+<img src="file:///Users/sugano/GoogleDrive/images/rstudio-cloud/rstudio-cloud-01-800x400b.png" alt="rstudio-cloud-01-800x400b.png" width="480">
+
+<figcaption><span class="figure-number">&#22259;4:  </span>Get Started をクリック</figcaption>
+</figure>
+
+</section>
+<section id="slide-4-4">
+<h3 id="4-4"><span class="section-number-3">4.4</span> R User (2/8)</h3>
+
+<figure id="orgd9fbd70">
+<img src="file:///Users/sugano/GoogleDrive/images/rstudio-cloud/rstudio-cloud-02-800x480b.png" alt="rstudio-cloud-02-800x480b.png" width="480">
+
+<figcaption><span class="figure-number">&#22259;5:  </span>Sign up with Google をクリック</figcaption>
+</figure>
+
+
+</section>
+<section id="slide-4-5">
+<h3 id="4-5"><span class="section-number-3">4.5</span> R User (3/8)</h3>
+
+<figure id="org30636e5">
+<img src="file:///Users/sugano/GoogleDrive/images/rstudio-cloud/rstudio-cloud-03-800x510b.png" alt="rstudio-cloud-03-800x510b.png" width="480">
+
+<figcaption><span class="figure-number">&#22259;6:  </span>Gmail のメールアドレスを入力</figcaption>
+</figure>
+
+
+</section>
+<section id="slide-4-6">
+<h3 id="4-6"><span class="section-number-3">4.6</span> R User (4/8)</h3>
+
+<figure id="org69e7a9c">
+<img src="file:///Users/sugano/GoogleDrive/images/rstudio-cloud/rstudio-cloud-04-800x500b.png" alt="rstudio-cloud-04-800x500b.png" width="480">
+
+<figcaption><span class="figure-number">&#22259;7:  </span>Gmail のパスワードを入力</figcaption>
+</figure>
+
+
+
+</section>
+<section id="slide-4-7">
+<h3 id="4-7"><span class="section-number-3">4.7</span> R User (5/8)</h3>
+
+<figure id="orgd0b44a6">
+<img src="file:///Users/sugano/GoogleDrive/images/rstudio-cloud/rstudio-cloud-05-800x600b.png" alt="rstudio-cloud-05-800x600b.png" width="480">
+
+<figcaption><span class="figure-number">&#22259;8:  </span>Untitled Project をクリック、作業開始</figcaption>
+</figure>
+
+
+
+
+</section>
+<section id="slide-4-8">
+<h3 id="4-8"><span class="section-number-3">4.8</span> R User (6/8)</h3>
+
+<figure id="orgb077048">
+<img src="file:///Users/sugano/GoogleDrive/images/rstudio-cloud/rstudio-cloud-06-800x600b.png" alt="rstudio-cloud-06-800x600b.png" width="480">
+
+<figcaption><span class="figure-number">&#22259;9:  </span>コンソールに、R のコードを入力</figcaption>
+</figure>
+
+</section>
+<section id="slide-4-9">
+<h3 id="4-9"><span class="section-number-3">4.9</span> R User (7/8)</h3>
+<p>
+Rコードをコピペ、【Enter】キーで実行
+</p>
+<div class="org-src-container">
+
+<pre  class="src src-R">dat<span style="color: #8470ff; font-weight: bold;">&lt;-</span>matrix(
+  c(29021,6910,5103,36526,46503,39762,2018,50,50,66,187,15,
+    92162,9510,2117,10310,4505,1037,76165,8331,3235,10785,6030,1628,
+    27979,3873,1682,5565,3722,1309),ncol = 5)
+colnames(dat)<span style="color: #8470ff; font-weight: bold;">&lt;-</span>c(<span style="color: #ffc1c1;">"Senmon"</span>,<span style="color: #ffc1c1;">"Kanri"</span>,<span style="color: #ffc1c1;">"Jimu"</span>,<span style="color: #ffc1c1;">"Hanbai"</span>,<span style="color: #ffc1c1;">"Etc"</span>)
+rownames(dat)<span style="color: #8470ff; font-weight: bold;">&lt;-</span>c(<span style="color: #ffc1c1;">"Bunkei"</span>,<span style="color: #ffc1c1;">"Etc"</span>,<span style="color: #ffc1c1;">"Nougaku"</span>,<span style="color: #ffc1c1;">"Kyouiku"</span>,<span style="color: #ffc1c1;">"Rikou"</span>,<span style="color: #ffc1c1;">"Hoken"</span>)
+dat
+</pre>
+</div>
+
+<pre class="example">
+        Senmon Kanri  Jimu Hanbai   Etc
+Bunkei   29021  2018 92162  76165 27979
+Etc       6910    50  9510   8331  3873
+Nougaku   5103    50  2117   3235  1682
+Kyouiku  36526    66 10310  10785  5565
+Rikou    46503   187  4505   6030  3722
+Hoken    39762    15  1037   1628  1309
+</pre>
+
+
+</section>
+<section id="slide-4-10">
+<h3 id="4-10"><span class="section-number-3">4.10</span> R User (8/8)</h3>
+<div class="org-src-container">
+
+<pre  class="src src-R">mosaicplot(dat,las=2,main=<span style="color: #ffc1c1;">"Social Division of Labor 2018"</span>)
+</pre>
+</div>
+
+
+<figure id="orgb803a11">
+<img src="figures/HE4IR-R-mosaicplot-01.png" alt="HE4IR-R-mosaicplot-01.png" width="480">
+
+<figcaption><span class="figure-number">&#22259;10:  </span>社会的分業マップ</figcaption>
+</figure>
+</div>
+</div>
+<script src="reveal.js-master/lib/js/head.min.js"></script>
+<script src="reveal.js-master/js/reveal.js"></script>
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: false,
+center: true,
+slideNumber: 'c',
+rollingLinks: false,
+keyboard: true,
+mouseWheel: false,
+fragmentInURL: false,
+hashOneBasedIndex: false,
+pdfSeparateFragments: true,
+
+overview: true,
+
+theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+transition: Reveal.getQueryHash().transition || 'default', // see README of reveal.js for options
+transitionSpeed: 'default',
+
+// Optional libraries used to extend reveal.js
+dependencies: [
+ { src: 'reveal.js-master/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+ { src: 'reveal.js-master/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+ { src: 'reveal.js-master/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
+ { src: 'reveal.js-master/plugin/search/search.js', async: true, condition: function() { return !!document.body.classList; } },
+ { src: 'reveal.js-master/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } }]
+
+});
+</script>
+</body>
+</html>
